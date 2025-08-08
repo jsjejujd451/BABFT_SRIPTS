@@ -19,14 +19,6 @@ from rich.prompt import Confirm, Prompt
 from rich.table import Table
 from rich.theme import Theme
 
-# Configure logging (only to file)
-logging.basicConfig(
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-    level=logging.INFO,
-    handlers=[logging.FileHandler("process.log")]
-)
-logger = logging.getLogger(__name__)
-
 # Global variables
 textures = []
 texture_sizes = {}
@@ -1213,3 +1205,4 @@ def main_console():
 # Entry Point
 if __name__ == '__main__':
     main_console()
+

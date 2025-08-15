@@ -19,6 +19,15 @@ from rich.prompt import Confirm, Prompt
 from rich.table import Table
 from rich.theme import Theme
 
+logging.basicConfig(
+    level=logging.INFO,  
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    handlers=[
+        logging.FileHandler("app.log"),     
+        logging.StreamHandler()             
+    ]
+)
+logger = logging.getLogger(__name__) 
 # Global variables
 textures = []
 texture_sizes = {}
@@ -28,7 +37,7 @@ command_history = []
 current_profile = "default"
 FIRST_RUN_FLAG = "first_run.flag"
 
-# Default parameters (updated with blocks_per_file)
+# Default parameters 
 DEFAULT_PARAMS = {
     "block_type": "PlasticBlock",
     "position_offset": -0.025,
@@ -1205,4 +1214,3 @@ def main_console():
 # Entry Point
 if __name__ == '__main__':
     main_console()
-
